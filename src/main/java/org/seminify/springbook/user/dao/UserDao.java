@@ -2,13 +2,13 @@ package org.seminify.springbook.user.dao;
 
 import org.seminify.springbook.user.domain.User;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class UserDao {
-    private Connection connection() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
-        return DriverManager.getConnection("jdbc:mysql://localhost/seminify", "seminify", "seminify");
-    }
+public abstract class UserDao {
+    protected abstract Connection connection() throws ClassNotFoundException, SQLException;
 
     public void add(User user) throws ClassNotFoundException, SQLException {
         Connection connection = connection();
