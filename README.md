@@ -26,3 +26,6 @@
 > > ### 1.1.3 [main()을 이용한 DAO 테스트 코드](https://github.com/seminify/spring-book/tree/vol.1.1.1.3)
 > > [UserDaoTest](https://github.com/seminify/spring-book/blob/vol.1.1.1.3/src/test/java/org/seminify/springbook/user/dao/UserDaoTest.java):
 > > main()을 이용한 DAO 테스트 코드
+>
+> > ### 1.2.1 [관심사의 분리](https://github.com/seminify/spring-book/tree/vol.1.1.2.1)
+> > 관심사의 분리: 관심이 같은 것끼리는 하나의 객체 안으로 또는 친한 객체로 모이게 하고, 관심이 다른 것은 가능한 따로 떨어져서 서로 영향을 주지 않도록 분리하는 것
