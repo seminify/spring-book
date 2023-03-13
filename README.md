@@ -29,3 +29,11 @@
 >
 > > ### 1.2.1 [관심사의 분리](https://github.com/seminify/spring-book/tree/vol.1.1.2.1)
 > > 관심사의 분리: 관심이 같은 것끼리는 하나의 객체 안으로 또는 친한 객체로 모이게 하고, 관심이 다른 것은 가능한 따로 떨어져서 서로 영향을 주지 않도록 분리하는 것
+>
+> > ### 1.2.2 [커넥션 만들기의 추출](https://github.com/seminify/spring-book/tree/vol.1.1.2.2)
+> > [UserDao](https://github.com/seminify/spring-book/blob/vol.1.1.2.2/src/main/java/org/seminify/springbook/user/dao/UserDao.java):
+> > 중복 코드의 메소드 추출
+> >
+> > 리팩토링: 기능에는 영향을 주지 않으면서 코드의 구조만 변경
+> >
+> > 메소드 추출: 공통의 기능을 담당하는 중복된 코드를 뽑아내는 리팩토링

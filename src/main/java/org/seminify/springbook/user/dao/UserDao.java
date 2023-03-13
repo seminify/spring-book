@@ -5,9 +5,13 @@ import org.seminify.springbook.user.domain.User;
 import java.sql.*;
 
 public class UserDao {
-    public void add(User user) throws ClassNotFoundException, SQLException {
+    private Connection connection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/seminify", "seminify", "seminify");
+        return DriverManager.getConnection("jdbc:mysql://localhost/seminify", "seminify", "seminify");
+    }
+
+    public void add(User user) throws ClassNotFoundException, SQLException {
+        Connection connection = connection();
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users (id, name, password) VALUES (?, ?, ?)");
         preparedStatement.setString(1, user.getId());
         preparedStatement.setString(2, user.getName());
@@ -18,8 +22,7 @@ public class UserDao {
     }
 
     public User get(String id) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/seminify", "seminify", "seminify");
+        Connection connection = connection();
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE id = ?");
         preparedStatement.setString(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
